@@ -5,51 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citas Médicas | Clínica Salud+</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
+    <img src="assets/css/imagenes/clinica-salud pg.png" alt="Logo Clínica Salud+" class="logo">
     <nav>
       <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
       <a href="servicios.html">Servicios</a>
       <a href="citas.html">Citas Médicas</a>
-      <a href="contacto.html">Contacto</a>
     </nav>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </header>
 
-  <section class="formulario">
-    <h2>Formulario de Citas Médicas</h2>
-    <form id="form">
-      <input type="text" id="paciente" placeholder="Nombre del paciente" required>
-      <input type="text" id="telefono" placeholder="Número de teléfono" required>
-      <input type="email" id="correo" placeholder="Correo electrónico" required>
-      <input type="date" id="nacimiento" required>
-      <input type="text" id="doctor" placeholder="Doctor" required>
-      <input type="datetime-local" id="fecha" required>
-      <input type="text" id="motivo" placeholder="Motivo / Síntomas" required>
-      <button type="submit" class="btn">Agregar cita</button>
-    </form>
+  <!-- Banner -->
+  <section class="citas-banner">
+    <h2>Agenda tu cita médica</h2>
+    <p>Tu salud es nuestra prioridad</p>
+  </section>
 
+  <!-- Formulario -->
+  <section class="citas-form">
+    <form id="form-citas">
+      <label for="paciente">Paciente:</label>
+      <input type="text" id="paciente" required>
+
+      <label for="doctor">Doctor:</label>
+      <input type="text" id="doctor" required>
+
+      <label for="especialidad">Especialidad:</label>
+      <select id="especialidad" required>
+        <option value="">Seleccione...</option>
+        <option value="Medicina General">Medicina General</option>
+        <option value="Pediatría">Pediatría</option>
+        <option value="Ginecología">Ginecología</option>
+        <option value="Dermatología">Dermatología</option>
+        <option value="Odontología">Odontología</option>
+        <option value="Laboratorio Clínico">Laboratorio Clínico</option>
+        <option value="Imagenología">Imagenología</option>
+        <option value="Hospitalización">Hospitalización</option>
+      </select>
+
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" required>
+
+      <label for="motivo">Motivo:</label>
+      <input type="text" id="motivo" required>
+
+      <label for="estado">Estado:</label>
+      <select id="estado">
+        <option value="Pendiente">Pendiente</option>
+        <option value="Confirmada">Confirmada</option>
+        <option value="Cancelada">Cancelada</option>
+      </select>
+
+      <button type="submit">Guardar Cita</button>
+    </form>
+  </section>
+
+  <!-- Tabla -->
+  <section class="citas-tabla">
+    <h3>Listado de Citas Médicas</h3>
     <table>
       <thead>
         <tr>
           <th>Paciente</th>
-          <th>Teléfono</th>
-          <th>Correo</th>
-          <th>Nacimiento</th>
           <th>Doctor</th>
+          <th>Especialidad</th>
           <th>Fecha</th>
           <th>Motivo</th>
+          <th>Estado</th>
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody id="tabla"></tbody>
+      <tbody id="tabla-citas"></tbody>
     </table>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Clínica Salud+. Todos los derechos reservados.</p>
+    <div class="footer-info">
+      <div class="info-item">
+        <img src="assets/css/imagenes/reloj.png" alt="Horario">
+        <p>Lunes a Viernes: 8h00 - 18h00</p>
+      </div>
+      <div class="info-item">
+        <img src="assets/css/imagenes/ubicacion.png" alt="Ubicación">
+        <p>Av. América y Bolívar, Cuenca</p>
+      </div>
+      <div class="info-item">
+        <img src="assets/css/imagenes/llamada.png" alt="Teléfono">
+        <p>099 999 9999</p>
+      </div>
+    </div>
+    <p>© 2026 Clínica Salud+</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
