@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas Médicas | Clínica Salud+</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="citas.html">Citas Médicas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="formulario">
+    <h2>Formulario de Citas Médicas</h2>
+    <form id="form">
+      <input type="text" id="paciente" placeholder="Nombre del paciente" required>
+      <input type="text" id="telefono" placeholder="Número de teléfono" required>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="date" id="nacimiento" required>
+      <input type="text" id="doctor" placeholder="Doctor" required>
+      <input type="datetime-local" id="fecha" required>
+      <input type="text" id="motivo" placeholder="Motivo / Síntomas" required>
+      <button type="submit" class="btn">Agregar cita</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Paciente</th>
+          <th>Teléfono</th>
+          <th>Correo</th>
+          <th>Nacimiento</th>
+          <th>Doctor</th>
+          <th>Fecha</th>
+          <th>Motivo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla"></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2026 Clínica Salud+. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

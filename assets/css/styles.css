@@ -1,0 +1,209 @@
+/* Fuente y reset */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #0a0a0a; /* fondo oscuro */
+  color: #f4f6f9;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Header */
+header {
+  background: #111;
+  padding: 15px;
+  box-shadow: 0 0 15px #00ffcc;
+}
+header nav a {
+  margin: 0 15px;
+  color: #00ffcc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+header nav a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Hero principal */
+.hero {
+  background: linear-gradient(135deg, #0a0a0a, #111);
+  color: #00ffcc;
+  padding: 80px 20px;
+  text-shadow: 0 0 10px #00ffcc;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+.hero .btn {
+  margin-top: 20px;
+  background: #ff00ff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 15px #ff00ff;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.hero .btn:hover {
+  background: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+/* Secciones */
+.section {
+  padding: 40px 20px;
+}
+.section h2 {
+  color: #00ffcc;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Servicios */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.card {
+  flex: 1 1 200px;
+  background: #111;
+  color: #f4f6f9;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff00ff;
+}
+
+/* Formulario de citas */
+.formulario {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+.formulario input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
+  background: #0a0a0a;
+  color: #f4f6f9;
+  box-shadow: 0 0 10px #00ffcc;
+}
+.formulario input:focus {
+  outline: none;
+  box-shadow: 0 0 15px #ff00ff;
+}
+.formulario .btn {
+  width: 100%;
+  background: #00ffcc;
+  color: #0a0a0a;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffcc;
+}
+.formulario .btn:hover {
+  background: #ff00ff;
+  color: white;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Tabla CRUD */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table th {
+  background: #111;
+  color: #00ffcc;
+  padding: 10px;
+  text-shadow: 0 0 10px #00ffcc;
+}
+table td {
+  background: #0a0a0a;
+  color: #f4f6f9;
+  padding: 10px;
+  border: 1px solid #333;
+}
+table button {
+  margin: 2px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc;
+}
+table .edit {
+  background: #2980b9;
+  color: white;
+}
+table .delete {
+  background: #c0392b;
+  color: white;
+}
+
+/* Contacto */
+.contacto {
+  padding: 40px 20px;
+}
+.contacto h2 {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+.redes {
+  margin-top: 15px;
+}
+.redes a {
+  margin: 10px;
+  color: #00ffcc; /* color neón */
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.redes a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 15px #ff00ff;
+}
+.redes i {
+  margin: 0 10px;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #00ffcc;
+  padding: 15px;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    flex: 1 1 auto;
+  }
+}

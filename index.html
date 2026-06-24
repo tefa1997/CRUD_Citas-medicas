@@ -2,99 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario de Citas Médicas</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Salud+</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title has-text-centered">📋 Registro de Citas Médicas</h1>
+  <!-- Header -->
+  <header>
+    <img src="assets/css/imagenes/clinica salud pg.png" alt="Logo Clínica Salud+" class="logo">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="citas.html">Citas Médicas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-      <!-- Formulario -->
-      <form id="formCita" class="box">
-        <div class="field">
-          <label class="label">Número de Seguro</label>
-          <div class="control">
-            <input class="input" type="text" id="seguro" placeholder="Ej: 1234567890" required>
-          </div>
-        </div>
+  <!-- Hero principal -->
+  <section id="home" class="hero">
+    <h1>Bienvenido a la Clínica Salud+</h1>
+    <p>Tu bienestar es nuestra prioridad</p>
+    <p>Contamos con los mejores profesionales y servicios para tu salud.</p>
+    <a href="citas.html" class="btn">¡Agendar cita!</a>
+  </section>
 
-        <div class="field">
-          <label class="label">Nombre Completo</label>
-          <div class="control">
-            <input class="input" type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
-          </div>
-        </div>
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>📍 Dirección: Av. González Suárez y Dolores J. Torres, Cuenca</p>
+    <p>📞 Teléfono: +593 968702143</p>
+    <p>✉️ Email: contacto@clinicasalud.com</p>
 
-        <div class="field">
-          <label class="label">Cédula</label>
-          <div class="control">
-            <input class="input" type="text" id="cedula" placeholder="Ej: 0102030405" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Correo Electrónico</label>
-          <div class="control">
-            <input class="input" type="email" id="correo" placeholder="ejemplo@correo.com" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Fecha de Nacimiento</label>
-          <div class="control">
-            <input class="input" type="date" id="nacimiento" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Fecha de Cita</label>
-          <div class="control">
-            <input class="input" type="date" id="fechaCita" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Motivo de la Cita</label>
-          <div class="control">
-            <textarea class="textarea" id="motivo" placeholder="Describe el motivo..." required></textarea>
-          </div>
-        </div>
-
-        <div class="field is-grouped is-grouped-centered">
-          <div class="control">
-            <button type="submit" class="button is-primary">Guardar Cita</button>
-          </div>
-          <div class="control">
-            <button type="reset" class="button is-light">Limpiar</button>
-          </div>
-        </div>
-      </form>
-
-      <!-- Tabla de citas -->
-      <h2 class="subtitle has-text-centered">📑 Lista de Citas</h2>
-      <div class="table-container">
-        <table class="table is-striped is-fullwidth" id="tablaCitas">
-          <thead>
-            <tr>
-              <th>N° Seguro</th>
-              <th>Nombre</th>
-              <th>Cédula</th>
-              <th>Correo</th>
-              <th>Nacimiento</th>
-              <th>Fecha Cita</th>
-              <th>Motivo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Aquí se insertarán las filas dinámicamente con JS -->
-          </tbody>
-        </table>
-      </div>
+    <div class="redes">
+      <h3>Síguenos en redes sociales</h3>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
     </div>
   </section>
 
-  <!-- Script externo para DOM y LocalStorage -->
-  <script src="app.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Clínica Salud+. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
+
+
