@@ -1,13 +1,17 @@
-/* Fondo general */
+/* ===== Fondo general ===== */
 body {
   background: #0a0a0a;
-  color: #e6f7ff;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  background-image: url("assets/css/imagenes/clinica-salud pg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e6f7ff;
   text-align: center;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
   background: linear-gradient(90deg, #4dd9ff, #ff66cc, #4dffb8);
   padding: 12px 20px;
@@ -16,28 +20,206 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.logo {
-  height: 100px;
-  filter: drop-shadow(0 0 12px #4dd9ff);
-}
-header nav {
-  display: flex;
-  gap: 20px;
-}
+.logo { height: 100px; filter: drop-shadow(0 0 12px #4dd9ff); }
+header nav { display: flex; gap: 20px; }
 header nav a {
+  color: #fff; font-weight: bold; text-decoration: none;
+  font-size: 1rem; transition: color 0.3s, text-shadow 0.3s;
+}
+header nav a:hover { color: #ff66cc; text-shadow: 0 0 10px #ff66cc; }
+
+/* ===== Hero (Inicio) ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(120deg, #4dd9ff, #4dffb8);
   color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s, text-shadow 0.3s;
 }
-header nav a:hover {
-  color: #ff66cc;
-  text-shadow: 0 0 10px #ff66cc;
+.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; margin-bottom: 20px; }
+.hero .btn {
+  background: #ff66cc; padding: 12px 25px; border-radius: 8px;
+  text-decoration: none; color: #fff; font-weight: bold;
+  box-shadow: 0 0 12px #ff66cc; transition: 0.3s;
 }
+.hero .btn:hover { background: #4dd9ff; box-shadow: 0 0 15px #4dd9ff; }
+
+/* ===== Tarjetas (Inicio, Quiénes Somos, Servicios) ===== */
+.inicio-info, .servicios-section, .quienes-somos {
+  display: flex; justify-content: center; gap: 30px;
+  margin: 50px auto; flex-wrap: wrap;
+}
+.info-card, .servicio-item {
+  width: 280px; background: #111; padding: 20px;
+  border-radius: 10px; box-shadow: 0 0 15px #4dd9ff;
+  text-align: center;
+}
+.info-card img, .servicio-item img {
+  width: 100%; height: 200px; object-fit: cover; border-radius: 10px;
+}
+.info-card h3, .servicio-item h3 { margin-top: 15px; color: #4dd9ff; }
+.info-card p, .servicio-item p { color: #e6f7ff; font-size: 0.9rem; }
+
+/* ===== Logos pequeños (Quiénes Somos) ===== */
+.qs-logos {
+  display: flex; justify-content: center; gap: 40px;
+  margin-top: 20px; flex-wrap: wrap;
+}
+.qs-logos .logo-item {
+  display: flex; align-items: center; gap: 8px;
+  color: #fff; font-size: 0.9rem;
+}
+.qs-logos .logo-item img {
+  height: 26px; filter: drop-shadow(0 0 6px #4dd9ff);
+}
+
+/* ===== Sección doctores ===== */
+.doctores-section { margin: 50px auto; text-align: center; }
+.doctores-section h2 {
+  font-size: 2rem; color: #4dd9ff; text-shadow: 0 0 12px #ff66cc;
+}
+.doctores-section p { font-size: 1rem; color: #e6f7ff; margin-bottom: 30px; }
+.doctores-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.doctor-card {
+  width: 220px; background: #111; padding: 15px;
+  border-radius: 10px; box-shadow: 0 0 12px #4dd9ff;
+  text-align: center; transition: transform 0.3s ease;
+}
+.doctor-card:hover { transform: scale(1.05); }
+.doctor-card img {
+  width: 180px; height: 180px; object-fit: cover;
+  border-radius: 50%; box-shadow: 0 0 8px #ff66cc;
+  margin: 0 auto; display: block;
+}
+.doctor-card h4 { margin-top: 10px; color: #4dd9ff; }
+.doctor-card p { font-size: 0.85rem; color: #e6f7ff; }
+
+/* ===== Banner citas ===== */
+
+.citas-banner {
+  text-align: center;
+  padding: 40px;
+  background: rgba(17,17,17,0.7);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 800px;
+  animation: fadeIn 1s ease-in-out;
+}
+.citas-banner h2 { color: #4dd9ff; }
+
+.citas-form {
+  background: rgba(17,17,17,0.85);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 15px #4dd9ff;
+  margin: 20px auto;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+.citas-form form { display: flex; flex-direction: column; gap: 15px; }
+.citas-form label { font-weight: bold; color: #4dd9ff; display: flex; align-items: center; gap: 8px; }
+.citas-form input, .citas-form select {
+  padding: 10px; border: 1px solid #4dd9ff; border-radius: 6px;
+  background: #111; color: #fff; width: 100%;
+  animation: slideIn 0.6s ease-in-out;
+}
+.citas-form button {
+  background: linear-gradient(90deg,#4dd9ff,#33bbdd);
+  color:#111; border:none; padding:12px; border-radius:8px;
+  font-weight:bold; cursor:pointer;
+  transition:transform 0.2s,background 0.3s;
+}
+.citas-form button:hover { transform:scale(1.05); background:linear-gradient(90deg,#33bbdd,#4dd9ff); }
+
+.citas-tabla {
+  background: rgba(17,17,17,0.85);
+  border-radius: 12px; padding: 25px;
+  box-shadow: 0 0 15px #4dd9ff;
+  margin: 20px auto; max-width: 600px;
+}
+.citas-tabla tbody { display:flex; flex-direction:column; gap:20px; }
+.citas-tabla tr {
+  display:flex; flex-direction:column;
+  background: rgba(17,17,17,0.85);
+  padding:15px; border-radius:10px;
+  box-shadow:0 0 12px #4dd9ff;
+  animation: fadeIn 0.8s ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.citas-tabla tr:hover { transform:scale(1.02); box-shadow:0 0 18px #33bbdd; }
+.citas-tabla td { margin:5px 0; color:#e6f7ff; font-size:0.9rem; display:flex; align-items:center; gap:8px; }
+.citas-tabla td i { color:#33bbdd; }
+.citas-tabla button { background:transparent; border:none; cursor:pointer; font-size:1.1rem; transition:transform 0.2s,color 0.2s; }
+.citas-tabla button:hover { transform:scale(1.3); color:#4dd9ff; }
+
+/* Animaciones */
+@keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+@keyframes slideIn { from{opacity:0;transform:translateX(-30px);} to{opacity:1;transform:translateX(0);} }
+
+
+/* ===== Listado citas ===== */
+.citas-tabla {
+  background: rgba(17,17,17,0.85);
+  border-radius: 12px; padding: 25px;
+  box-shadow: 0 0 15px #4dd9ff;
+  margin: 20px auto; max-width: 600px;
+}
+.citas-tabla tbody { display:flex; flex-direction:column; gap:20px; }
+.citas-tabla tr {
+  display:flex; flex-direction:column;
+  background: rgba(17,17,17,0.85);
+  padding:15px; border-radius:10px;
+  box-shadow:0 0 12px #4dd9ff;
+  animation: fadeIn 0.8s ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.citas-tabla tr:hover { transform:scale(1.02); box-shadow:0 0 18px #33bbdd; }
+.citas-tabla td {
+  margin:5px 0; color:#e6f7ff; font-size:0.9rem;
+  display:flex; align-items:center; gap:8px;
+}
+.citas-tabla td i { color:#33bbdd; }
+.citas-tabla button {
+  background:transparent; border:none; cursor:pointer;
+  font-size:1.1rem; transition:transform 0.2s,color 0.2s;
+}
+.citas-tabla button:hover { transform:scale(1.3); color:#4dd9ff; }
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(90deg, #4dffb8, #ff66cc, #4dd9ff);
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 0 20px #4dd9ff;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.footer-info img {
+  height: 25px;
+  filter: drop-shadow(0 0 6px #4dd9ff);
+}
+
+/* Íconos sociales */
 .social-icons {
   display: flex;
+  justify-content: center;
   gap: 15px;
+  margin-bottom: 10px;
 }
 .social-icons a {
   color: #fff;
@@ -49,227 +231,9 @@ header nav a:hover {
   text-shadow: 0 0 10px #4dd9ff;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(120deg, #4dd9ff, #4dffb8);
-  color: #fff;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.hero .btn {
-  background: #ff66cc;
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  box-shadow: 0 0 12px #ff66cc;
-  transition: 0.3s;
-}
-.hero .btn:hover {
-  background: #4dd9ff;
-  box-shadow: 0 0 15px #4dd9ff;
-}
-
-/* Tarjetas (Inicio, Quiénes Somos, Servicios) */
-.inicio-info, .servicios-section, .quienes-somos {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 50px auto;
-  flex-wrap: wrap;
-}
-.info-card, .servicio-item {
-  width: 280px;
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #4dd9ff;
-  text-align: center;
-}
-.info-card img, .servicio-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.info-card h3, .servicio-item h3 {
-  margin-top: 15px;
-  color: #4dd9ff;
-}
-.info-card p, .servicio-item p {
-  color: #e6f7ff;
-  font-size: 0.9rem;
-}
-
-/* Logos pequeños */
-.qs-logos {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-.qs-logos .logo-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #fff;
-  font-size: 0.9rem;
-}
-.qs-logos .logo-item img {
-  height: 26px;
-  width: auto;
-  filter: drop-shadow(0 0 6px #4dd9ff);
-}
-
-/* CRUD Citas Médicas */
-.citas-banner {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.citas-banner h2 {
-  font-size: 2rem;
-  color: #4dd9ff;
-  text-shadow: 0 0 12px #ff66cc;
-}
-.citas-banner p {
-  font-size: 1.2rem;
-  color: #fff;
-  text-shadow: 0 0 10px #4dffb8;
-}
-.citas-form {
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-  background: rgba(17, 17, 17, 0.85);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #4dd9ff;
-}
-.citas-form label {
-  display: block;
+/* Texto final */
+footer p {
+  font-size: 0.85rem;
   margin-top: 10px;
-  font-weight: bold;
-}
-.citas-form input, .citas-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 6px;
-  background: #222;
-  color: #fff;
-  box-shadow: inset 0 0 8px #4dd9ff;
-}
-.citas-form input:focus, .citas-form select:focus {
-  outline: none;
-  box-shadow: 0 0 12px #ff66cc;
-}
-.citas-form button {
-  margin-top: 15px;
-  width: 100%;
-  background: #ff66cc;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.citas-form button:hover {
-  background: #4dd9ff;
-  box-shadow: 0 0 12px #4dd9ff;
-}
-
-/* Tabla CRUD */
-.citas-tabla {
-  max-width: 900px;
-  margin: 30px auto 0 auto;
-  background: rgba(17, 17, 17, 0.85);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #4dd9ff;
-}
-.citas-tabla h3 {
-  margin-bottom: 15px;
-  color: #4dffb8;
-  text-shadow: 0 0 10px #4dffb8;
-}
-.citas-tabla table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.citas-tabla th, .citas-tabla td {
-  padding: 10px;
-  border-bottom: 1px solid #4dd9ff;
-  text-align: center;
-}
-.citas-tabla th {
-  color: #ff66cc;
-}
-.citas-tabla td button {
-  margin: 0 5px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #4dd9ff;
-  color: #111;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.citas-tabla td button:hover {
-  background: #ff66cc;
-  color: #fff;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(90deg, #4dffb8, #ff66cc, #4dd9ff);
-  padding: 20px;
-  color: #fff;
-  box-shadow: 0 0 20px #4dd9ff;
-}
-.footer-info {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-.footer-info .info-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
-}
-.footer-info img {
-  height: 25px;
-  filter: drop-shadow(0 0 6px #4dd9ff);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .inicio-info, .servicios-section, .quienes-somos {
-    flex-direction: column;
-    align-items: center;
-  }
-  .info-card, .servicio-item {
-    width: 90%;
-  }
-  .hero {
-    padding: 50px 15px;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
+  color: #e6f7ff;
 }

@@ -32,7 +32,6 @@ function mostrarInfo(servicio) {
       contenido = "<p>Selecciona un servicio para ver más información.</p>";
   }
 
-  // Animación suave
   infoBox.style.opacity = 0;
   setTimeout(() => {
     infoBox.innerHTML = contenido;
@@ -44,70 +43,66 @@ function mostrarInfo(servicio) {
 // -------------------- CRUD de citas médicas --------------------
 const form = document.getElementById("form-citas");
 const tabla = document.getElementById("tabla-citas");
-const tablaContainer = document.getElementById("tabla-container");
 
 let citas = JSON.parse(localStorage.getItem("citas")) || [];
 
-function renderTabla() {
+// Renderizar citas
+function renderCitas() {
   tabla.innerHTML = "";
   citas.forEach((cita, index) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${cita.paciente}</td>
-      <td>${cita.telefono}</td>
-      <td>${cita.email}</td>
-      <td>${cita.nacimiento}</td>
-      <td>${cita.direccion}</td>
-      <td>${cita.especialidad}</td>
-      <td>${cita.doctor}</td>
-      <td>${cita.fecha}</td>
-      <td>${cita.motivo}</td>
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td><i class="fa-solid fa-user"></i> <strong>Paciente:</strong> ${cita.paciente}</td>
+      <td><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> ${cita.telefono}</td>
+      <td><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> ${cita.email}</td>
+      <td><i class="fa-solid fa-calendar-days"></i> <strong>Fecha:</strong> ${cita.fecha}</td>
+      <td><i class="fa-solid fa-clock"></i> <strong>Hora:</strong> ${cita.hora}</td>
+      <td><i class="fa-solid fa-notes-medical"></i> <strong>Motivo:</strong> ${cita.motivo}</td>
+      <td><i class="fa-solid fa-clipboard-check"></i> <strong>Estado:</strong> ${cita.estado}</td>
       <td>
-        <button onclick="editarCita(${index})">✏️</button>
-        <button onclick="eliminarCita(${index})">🗑️</button>
+        <button onclick="editarCita(${index})"><i class="fa-solid fa-pen"></i></button>
+        <button onclick="eliminarCita(${index})"><i class="fa-solid fa-trash"></i></button>
       </td>
     `;
-    tabla.appendChild(row);
+    tabla.appendChild(fila);
   });
-  tablaContainer.style.display = citas.length > 0 ? "block" : "none";
 }
 
+// Guardar nueva cita
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const nuevaCita = {
     paciente: document.getElementById("paciente").value,
     telefono: document.getElementById("telefono").value,
     email: document.getElementById("email").value,
-    nacimiento: document.getElementById("nacimiento").value,
-    direccion: document.getElementById("direccion").value,
-    especialidad: document.getElementById("especialidad").value,
-    doctor: document.getElementById("doctor").value,
     fecha: document.getElementById("fecha").value,
+    hora: document.getElementById("hora").value,
     motivo: document.getElementById("motivo").value,
     estado: document.getElementById("estado") ? document.getElementById("estado").value : "Pendiente"
   };
+
   citas.push(nuevaCita);
   localStorage.setItem("citas", JSON.stringify(citas));
-  renderTabla();
+  renderCitas();
   form.reset();
 });
 
+// Eliminar cita
 function eliminarCita(index) {
   citas.splice(index, 1);
   localStorage.setItem("citas", JSON.stringify(citas));
-  renderTabla();
+  renderCitas();
 }
 
+// Editar cita
 function editarCita(index) {
   const cita = citas[index];
   document.getElementById("paciente").value = cita.paciente;
   document.getElementById("telefono").value = cita.telefono;
   document.getElementById("email").value = cita.email;
-  document.getElementById("nacimiento").value = cita.nacimiento;
-  document.getElementById("direccion").value = cita.direccion;
-  document.getElementById("especialidad").value = cita.especialidad;
-  document.getElementById("doctor").value = cita.doctor;
   document.getElementById("fecha").value = cita.fecha;
+  document.getElementById("hora").value = cita.hora;   
   document.getElementById("motivo").value = cita.motivo;
   if (document.getElementById("estado")) {
     document.getElementById("estado").value = cita.estado;
@@ -115,15 +110,7 @@ function editarCita(index) {
   eliminarCita(index); // se reemplaza al guardar
 }
 
-renderTabla();
-
-// -------------------- Swiper (si usas carrusel en servicios) --------------------
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  autoplay: { delay: 3000 },
-  pagination: { el: '.swiper-pagination', clickable: true },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-});
-
+// Render inicial
+renderCitas();
 
 

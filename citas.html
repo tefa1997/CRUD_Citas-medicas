@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citas Médicas | Clínica Salud+</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Librería de íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
+   <!-- Header -->
   <header>
     <img src="assets/css/imagenes/clinica-salud pg.png" alt="Logo Clínica Salud+" class="logo">
     <nav>
@@ -23,23 +24,34 @@
       <a href="#"><i class="fab fa-whatsapp"></i></a>
     </div>
   </header>
-
   <!-- Banner -->
   <section class="citas-banner">
     <h2>Agenda tu cita médica</h2>
     <p>Tu salud es nuestra prioridad</p>
   </section>
 
-  <!-- Formulario -->
+  <!-- Formulario con íconos -->
   <section class="citas-form">
     <form id="form-citas">
-      <label for="paciente">Paciente:</label>
+      <label for="paciente"><i class="fa-solid fa-user"></i> Paciente:</label>
       <input type="text" id="paciente" required>
 
-      <label for="doctor">Doctor:</label>
-      <input type="text" id="doctor" required>
+      <label for="telefono"><i class="fa-solid fa-phone"></i> Teléfono:</label>
+      <input type="tel" id="telefono" required>
 
-      <label for="especialidad">Especialidad:</label>
+      <label for="email"><i class="fa-solid fa-envelope"></i> Correo electrónico:</label>
+      <input type="email" id="email" required>
+
+      <label for="edad"><i class="fa-solid fa-child"></i> Edad:</label>
+      <input type="number" id="edad" min="0" required>
+
+      <label for="nacimiento"><i class="fa-solid fa-cake-candles"></i> Fecha de nacimiento:</label>
+      <input type="date" id="nacimiento" required>
+
+      <label for="direccion"><i class="fa-solid fa-map-marker-alt"></i> Dirección:</label>
+      <input type="text" id="direccion" required>
+
+      <label for="especialidad"><i class="fa-solid fa-stethoscope"></i> Especialidad:</label>
       <select id="especialidad" required>
         <option value="">Seleccione...</option>
         <option value="Medicina General">Medicina General</option>
@@ -47,46 +59,44 @@
         <option value="Ginecología">Ginecología</option>
         <option value="Dermatología">Dermatología</option>
         <option value="Odontología">Odontología</option>
-        <option value="Laboratorio Clínico">Laboratorio Clínico</option>
-        <option value="Imagenología">Imagenología</option>
-        <option value="Hospitalización">Hospitalización</option>
       </select>
 
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" required>
+      <label for="doctor"><i class="fa-solid fa-user-doctor"></i> Doctor:</label>
+      <select id="doctor" required>
+        <option value="">Seleccione...</option>
+        <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
+        <option value="Dra. María Gómez">Dra. María Gómez</option>
+          <option value="Dr.Carlos Ruiz">Dr.Carlos Ruiz</option>
+      </select>
 
-      <label for="motivo">Motivo:</label>
+      <label for="fecha"><i class="fa-solid fa-calendar-days"></i> Fecha:</label>
+      <input type="date" id="fecha" required>
+<label for="hora"><i class="fa-solid fa-clock"></i> Hora:</label>
+<input type="time" id="hora" required>
+      <label for="motivo"><i class="fa-solid fa-notes-medical"></i> Motivo:</label>
       <input type="text" id="motivo" required>
 
-      <label for="estado">Estado:</label>
+      <label for="estado"><i class="fa-solid fa-clipboard-check"></i> Estado:</label>
       <select id="estado">
         <option value="Pendiente">Pendiente</option>
         <option value="Confirmada">Confirmada</option>
         <option value="Cancelada">Cancelada</option>
       </select>
 
-      <button type="submit">Guardar Cita</button>
+      <button type="submit"><i class="fa-solid fa-save"></i> Guardar Cita</button>
     </form>
   </section>
 
-  <!-- Tabla -->
-  <section class="citas-tabla">
-    <h3>Listado de Citas Médicas</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Paciente</th>
-          <th>Doctor</th>
-          <th>Especialidad</th>
-          <th>Fecha</th>
-          <th>Motivo</th>
-          <th>Estado</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="tabla-citas"></tbody>
-    </table>
-  </section>
+<section class="citas-tabla">
+   <h3>Listado de Citas Médicas</h3>
+  <table>
+    <thead><tr><th>Datos</th></tr></thead>
+    <tbody id="tabla-citas">
+      <!-- Aquí se insertan las citas dinámicamente -->
+    </tbody>
+  </table>
+</section>
+
 
   <!-- Footer -->
   <footer>
@@ -108,6 +118,6 @@
   </footer>
 
   <!-- Script -->
-  <script src="assets/js/script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
